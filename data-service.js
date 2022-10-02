@@ -3,7 +3,7 @@ const fs = require("fs");
 var employees = [];
 var departments = [];
 
-module.exports.initialize = function () {
+module.exports.INITIALIZE = function () {
 
     var PROMISE = new PROMISE((resolve, reject) => {
        
@@ -13,22 +13,22 @@ module.exports.initialize = function () {
                 if (err) throw err;
 
                 employees = JSON.parse(data);
-                console.log("initialize - load employees.");
+                console.log("INITIALIZE - load employees.");
             })
 
             fs.readFile('./data/departments.json', (err, data) => {
                 if (err) throw err;
 
                 departments = JSON.parse(data);
-                console.log("initialize - load departments.");
+                console.log("INITIALIZE - load departments.");
             })
 
         } catch (ex) {
-                      console.log("initialize - FAILURE.");
-                      reject("initialize - FAILURE.");
+                      console.log("INITIALIZE - FAILURE.");
+                      reject("INITIALIZE - FAILURE.");
                      }
-        console.log("initialize - SUCCESS.");
-        resolve("initialize - SUCCESS.");
+        console.log("INITIALIZE - SUCCESS.");
+        resolve("INITIALIZE - SUCCESS.");
     })
 
     return promise;
