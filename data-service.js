@@ -1,5 +1,3 @@
-const fs = require("fs");
-
 var employees = [];
 var departments = [];
 

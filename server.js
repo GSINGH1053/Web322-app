@@ -6,7 +6,7 @@
 * 
 *  Name: gurtarnjit singh Student ID: 156805210 Date: 29/09/2022
 *
-*  Online (cyclic) Link: 
+*  Online (cyclic) Link: ttps://quaint-plum-cockatoo.cyclic.app
 *
 ********************************************************************************/ 
 
@@ -17,7 +17,6 @@ var dataSrv = require("./data-service.js");
 
 var app = express();
 app.use(express.static('public/css'));
-app.use(express.static('img')); 
 
 var HTTP_PORT = process.env.PORT || 8080;
 function onHttpStart() {
@@ -67,9 +66,6 @@ app.get("/about", function(req,res){
                            })
   });
   
-  app.use(function (req, res) {
-    res.status(404).sendFile(path.join(__dirname,"/views/error404.html"));
-  })
 console.log ("Ready for initialize");
 dataSrv.initialize()
                     .then(() => {
